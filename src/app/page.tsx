@@ -1,6 +1,5 @@
-import { auth, signIn } from "@/auth";
+import { auth } from "@/auth";
 import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import { redirect } from "next/navigation";
 

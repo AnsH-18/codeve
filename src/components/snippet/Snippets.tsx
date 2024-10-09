@@ -11,7 +11,7 @@ const Snippets: React.FC<snipppetProps> = ({snippets, onSnippetDelete, onSnippet
   return (
     <div className={`${snippets ? 'grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1' : 'flex justify-center items-center'} p-5 gap-3`}>
        {snippets ? snippets?.map(snippet => (
-           <SnippetNote snippet={snippet} onSnippetDelete = {onSnippetDelete} onSnippetRestore={onSnippetRestore}/>
+           <SnippetNote key = {snippet._id as string} snippet={snippet} onSnippetDelete = {onSnippetDelete} onSnippetRestore={onSnippetRestore}/>
        )) : <NoSnippet/>}
     </div>
   )

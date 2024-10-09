@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import Link from 'next/link';
+import { useSidebarContext } from '@/providers/SidebarContextProvider';
+import { GalleryVerticalEnd, Menu, PanelLeft, Plus, Star, Trash, X } from 'lucide-react';
 import Image from 'next/image';
-import { X, Menu, PanelLeft, GalleryVerticalEnd, Plus, Star, Trash, Tags } from 'lucide-react';
-import { useSidebarContext } from '@/providers/SidebarContextProvider'; 
-import logo from '../../public/assets/bracket_17856274.png'; 
+import Link from 'next/link';
+import React, { useState } from 'react';
+import logo from '../../public/assets/bracket_17856274.png';
 import EditTagsDialog from './tags/EditTagsDialog';
 
 interface SidebarProps {

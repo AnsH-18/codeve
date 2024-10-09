@@ -1,8 +1,8 @@
 "use client"
 import Sidebar from '@/components/Sidebar';
-import React, { useState, ReactNode, createContext, useContext } from 'react';
 import { Toaster } from '@/components/ui/sonner';
 import { SidebarProvider } from '@/providers/SidebarContextProvider';
+import React, { useState } from 'react';
 
 interface LayoutProps {
   children: React.ReactNode;

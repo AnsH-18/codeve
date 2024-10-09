@@ -20,7 +20,7 @@ function AddTagDialog() {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
     const inputName = formData.get("name") as string;
-    const response = await fetch("/api/tags", {
+    await fetch("/api/tags", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -47,7 +47,7 @@ function AddTagDialog() {
           <DialogHeader>
             <DialogTitle>Add New Tag</DialogTitle>
             <DialogDescription>
-              Create a tag here. Click save when you're done.
+              Create a tag here. Click save when you&aposre done.
             </DialogDescription>
           </DialogHeader>
           <form onSubmit={handleSubmit}>

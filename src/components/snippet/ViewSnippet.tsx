@@ -1,11 +1,4 @@
-import React, { useState } from 'react';
-import { PlusCircle, X } from 'lucide-react'; // Assuming you're using lucide-react for icons
-
-interface TabContentProps {
-  title: string;
-  onClose: () => void;
-}
-
+import { X } from 'lucide-react'; 
 
 function ViewSnippet() {
   return (

@@ -1,10 +1,9 @@
 "use client"
 
-import React, { useState, useRef, useEffect } from 'react'
-import { Button } from '../ui/button'
-import AddTagDialog from '../snippet/AddTagDialog'
-import { ITag } from '@/models/schema'
 import { LTag } from '@/app/api/tags/route'
+import { useEffect, useRef, useState } from 'react'
+import AddTagDialog from '../snippet/AddTagDialog'
+import { Button } from '../ui/button'
 
 interface SimpleTagCarouselProps {
   tags: LTag[]
@@ -12,7 +11,7 @@ interface SimpleTagCarouselProps {
   onCreateNewTag?: () => void
 }
 
-export default function SimpleTagCarousel({ tags, onTagSelect, onCreateNewTag }: SimpleTagCarouselProps) {
+export default function SimpleTagCarousel({ tags, onTagSelect }: SimpleTagCarouselProps) {
   const [selectedTag, setSelectedTag] = useState<string | null>("all")
   const scrollRef = useRef<HTMLDivElement>(null)
 
@@ -21,11 +20,6 @@ export default function SimpleTagCarousel({ tags, onTagSelect, onCreateNewTag }:
     if (onTagSelect) onTagSelect(tag)
   }
 
-  const scroll = (scrollOffset: number) => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollLeft += scrollOffset
-    }
-  }
 
   useEffect(() => {
     handleTagClick(null)

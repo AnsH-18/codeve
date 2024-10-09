@@ -1,16 +1,13 @@
-import React from 'react'
-import { Button } from './ui/button'
-import Image from 'next/image'
+import { signOut } from '@/auth'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
+  DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu"
-import { signOut } from '@/auth'
+import Image from 'next/image'
 import { redirect } from 'next/navigation'
+import { Button } from './ui/button'
 
 
 type userprofiletype = {

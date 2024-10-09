@@ -1,24 +1,25 @@
-import React, { useState, useEffect } from 'react';
 import { LSnippet } from '@/app/api/snippet/route';
-import { Heart, ArchiveRestore } from 'lucide-react';
-import { Button } from '../ui/button';
-import CodeMirror from '@uiw/react-codemirror';
-import { githubLight } from '@uiw/codemirror-theme-github';
-import { javascript } from '@codemirror/lang-javascript';
 import { formatDate } from '@/lib/utils';
+import { useSidebarContext } from '@/providers/SidebarContextProvider';
+import { javascript } from '@codemirror/lang-javascript';
+import { githubLight } from '@uiw/codemirror-theme-github';
+import CodeMirror from '@uiw/react-codemirror';
+import { Heart } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
+import React, { useEffect, useState } from 'react';
+import { Button } from '../ui/button';
 import DeleteSnippetDialog from './DeleteSnippetDialog';
 import RestoreSnippetDialog from './RestoreSnippetDialog';
-import Link from 'next/link';
-import { useSidebarContext } from '@/providers/SidebarContextProvider';
 
 interface SnippetProps {
   snippet: LSnippet;
   onSnippetDelete: (id: string) => void;
   onSnippetRestore: (id: string) => void
+  key: string
 }
 
-const SnippetNote: React.FC<SnippetProps> = ({ snippet, onSnippetDelete, onSnippetRestore }) => {
+const SnippetNote: React.FC<SnippetProps> = ({key, snippet, onSnippetDelete, onSnippetRestore }) => {
   const {updateCurrentSnippetId} = useSidebarContext()
   const formattedDate = formatDate(snippet.createdAt);
   const [isFavorite, setIsFavorite] = useState(snippet.isFavorite);
@@ -47,7 +48,7 @@ const SnippetNote: React.FC<SnippetProps> = ({ snippet, onSnippetDelete, onSnipp
   };
 
   return (
-      <div className='bg-white rounded-md p-5 shadow-sm transition-transform transform hover:scale-[1.01] hover:shadow-lg duration-300 ease-in-out'>
+      <div key={key} className='bg-white rounded-md p-5 shadow-sm transition-transform transform hover:scale-[1.01] hover:shadow-lg duration-300 ease-in-out'>
       {/* header */}
       <div className='flex justify-between items-center mb-4'>
         <div>

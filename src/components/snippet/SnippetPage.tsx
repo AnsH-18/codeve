@@ -1,21 +1,21 @@
 "use client"
 
-import React, { useEffect, useState } from 'react';
 import CodeEditor from '@/components/Editor';
-import { ITag, ISnippet } from '@/models/schema';
-import { Code, Keyboard, Tags } from 'lucide-react';
 import TagSelectionComponent from '@/components/tags/TagsSelection';
 import { Button } from '@/components/ui/button';
-import { toast } from 'sonner';
 import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogFooter,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
 } from "@/components/ui/dialog";
+import { ITag } from '@/models/schema';
+import { Code, Keyboard, Tags } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { toast } from 'sonner';
 
 interface SnippetPageProps {
   snippetId?: string;

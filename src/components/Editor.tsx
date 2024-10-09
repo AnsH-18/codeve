@@ -1,10 +1,8 @@
-import React from 'react';
-import CodeMirror, { EditorSelection } from '@uiw/react-codemirror';
-import { Copy } from 'lucide-react';
 import { javascript } from '@codemirror/lang-javascript';
-import { oneDark } from '@uiw/react-codemirror';
 import { githubLight } from '@uiw/codemirror-theme-github';
-import { useState } from 'react';
+import CodeMirror from '@uiw/react-codemirror';
+import { Copy } from 'lucide-react';
+import React, { useState } from 'react';
 import LangSelect from './LangSelect';
 type EdiTorProps = {
     value: string,
