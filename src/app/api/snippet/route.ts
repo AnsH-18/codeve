@@ -53,14 +53,14 @@ export async function GET(request: NextRequest) {
   
     try {
       const userId = session?.user?.id; 
-      const pipeline: any[] = [
+      const pipeline: any[]  = [
         {$match: { userId: new mongoose.Types.ObjectId(userId) }},
         {
           $lookup: {
             from: 'languages',
             localField: 'language',
             foreignField: 'name',
-            as: 'languageDoc',
+            as: 'languageDoc', 
           },
         },
         {
